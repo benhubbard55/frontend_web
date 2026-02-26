@@ -1,0 +1,12 @@
+import React from 'react';
+import socketIOClient from 'socket.io-client';
+import sailsIOClient from 'sails.io.js';
+
+let io;
+if (socketIOClient.sails) {
+    io = socketIOClient;
+} else {
+    io = sailsIOClient(socketIOClient);
+}
+
+export default io;
